@@ -40,9 +40,10 @@ results = TestResult("00010101010110")
 
 FlakyTest().evaluate([results])
 
-# If you want to measure more than the default 14 past results, just pass in a new 'window'
-# value. FYI, values less than 12 do not generate useful measurements.
-FlakyTest(window=18).evaluate([results])
+# If you want to measure more than the default 14 past results, just pass in a new 'test_count'
+# value. Ensure length of your result string matches.
+# FYI, values less than 10 do not generate useful measurements.
+FlakyTest(test_count=18).evaluate([results])
 
 results.add_test_result(0)  # 0 = pass, 1 = failure
 ```
