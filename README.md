@@ -45,6 +45,8 @@ FlakyTest().evaluate([results])
 # FYI, values less than 10 do not generate useful measurements.
 FlakyTest(test_count=18).evaluate([results])
 
+# If you need to add results in a piecemeal fashion, you can just add in the value to
+# build up oldest to newest.
 results.add_test_result(0)  # 0 = pass, 1 = failure
 ```
 
