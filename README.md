@@ -10,10 +10,10 @@ From a local checkout:
 pip install .
 ```
 
-From GitHub (replace OWNER and REPOSITORY with your repository):
+From GitHub:
 
 ```sh
-pip install "flaky-test @ git+https://github.com/OWNER/REPOSITORY.git"
+pip install "flaky-test @ git+https://github.com/mcstoufer/FlakyTest.git"
 ```
 
 From a package index after publishing the distribution:
@@ -29,8 +29,6 @@ pip install build twine
 python -m build
 python -m twine upload --repository-url https://packages.example.com/ dist/*
 ```
-
-The URLs above are placeholders. This project has not been published.
 
 ## Usage
 
