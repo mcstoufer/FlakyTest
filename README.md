@@ -35,8 +35,15 @@ python -m twine upload --repository-url https://packages.example.com/ dist/*
 ```python
 from flaky_test import FlakyTest, TestResult
 
+# '0' represents passing test, '1' for failure.
 results = TestResult("00010101010110")
+
 FlakyTest().evaluate([results])
+
+# If you want to measure more than the default 14 past results, just pass in a new 'window'
+# value. FYI, values less than 12 do not generate useful measurements.
+FlakyTest(window=18).evaluate([results])
+
 results.add_test_result(0)  # 0 = pass, 1 = failure
 ```
 
