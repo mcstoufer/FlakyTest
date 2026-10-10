@@ -9,6 +9,11 @@ class _Result(Enum):
         return "0" if self == _Result.PASS else "1"
 
 class TestResult:
+    """
+    A wrapper class that holds the sequence of pass/fail test results.
+
+    Provides convenience methods to access counts, values, and measurements against the sequence.
+    """
     test_results: list[str] = []
     entropy: float = -1
 

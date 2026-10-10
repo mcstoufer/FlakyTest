@@ -10,10 +10,10 @@ From a local checkout:
 pip install .
 ```
 
-From GitHub (replace OWNER and REPOSITORY with your repository):
+From GitHub:
 
 ```sh
-pip install "flaky-test @ git+https://github.com/OWNER/REPOSITORY.git"
+pip install "flaky-test @ git+https://github.com/mcstoufer/FlakyTest.git"
 ```
 
 From a package index after publishing the distribution:
@@ -30,15 +30,20 @@ python -m build
 python -m twine upload --repository-url https://packages.example.com/ dist/*
 ```
 
-The URLs above are placeholders. This project has not been published.
-
 ## Usage
 
 ```python
 from flaky_test import FlakyTest, TestResult
 
+# '0' represents passing test, '1' for failure.
 results = TestResult("00010101010110")
+
 FlakyTest().evaluate([results])
+
+# If you want to measure more than the default 14 past results, just pass in a new 'window'
+# value. FYI, values less than 12 do not generate useful measurements.
+FlakyTest(window=18).evaluate([results])
+
 results.add_test_result(0)  # 0 = pass, 1 = failure
 ```
 
