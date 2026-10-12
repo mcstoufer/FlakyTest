@@ -28,14 +28,14 @@ class FlakyTest:
 
     _pass_pct_lower = 0.10
     _pass_pct_upper = 0.85
-    _deviation_bound = 1.0
+    _deviation_bound = 4.0
     _test_count = 14
 
     _permutation_engine: Permutations
 
     def __init__(self, lower_bound=.10,
                  upper_bound=.85,
-                 deviation_bound=1.5,
+                 deviation_bound=4.0,
                  test_count=14):
         """
         Base initializer for the Flaky Test measurements.
@@ -48,9 +48,9 @@ class FlakyTest:
          fail percentage will not be measured. These tests are considered 'broken' even if there are a small
          amount of passes recorded.
         :type upper_bound: float
-        :param deviation_bound: This is the statistical standard deviation to include/exclude the given test result
-         when determining confidence level. If the σ value is too small, no confidence will be returned. If too high,
-         confidence level will be too low to be useful.
+        :param deviation_bound: This is the statistical Beta value used in a simple radial basis profile calculation.
+          If the σ value is too small, no confidence will be returned. If too high, confidence level will be too low to
+          be useful. A value around 4.0 is appropriate.
         :type deviation_bound: float
         :param test_count: The size of the test result window to work with. If tests results are longer than this
          window, they are head truncated before measurements. If too small, no measurement is made.
@@ -91,7 +91,7 @@ class FlakyTest:
             fail_pct = test_result.fail_pct()
             if self._pass_pct_lower <= fail_pct <= self._pass_pct_upper:
                 self._permutation_engine.generate_all()
-                calculated_confidence = self._permutation_engine.find_confidence(test_result, self._deviation_bound)
+                calculated_confidence = self._permutation_engine.find_confidence(test_result, beta=self._deviation_bound)
                 calculated_confidences.append((test_result, calculated_confidence))
             else:
                 print("Test result outside of statistical bounds.", file=sys.stderr)

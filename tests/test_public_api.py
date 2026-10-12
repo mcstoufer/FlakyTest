@@ -9,7 +9,7 @@ class PublicAPITest(unittest.TestCase):
         self.assertEqual(flaky_test.__all__, ["FlakyTest", "TestResult"])
         for name in ("Permutations", "Result", "test_result_entropy"):
             self.assertFalse(hasattr(flaky_test, name))
-        self.assertEqual(FlakyTest(test_count=11).test_count, 11)
+        self.assertEqual(FlakyTest(test_count=11)._test_count, 11)
 
     def test_result_without_internal_enum(self):
         result = TestResult("01")

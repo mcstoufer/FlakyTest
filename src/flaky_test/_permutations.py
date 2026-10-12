@@ -1,20 +1,17 @@
 # This is a sample Python script.
-import itertools
-import bisect
 import json
+import numpy as np
 import tempfile
 from math import ceil, floor
-import statistics
 
 from ._test_result import TestResult
-from ._utilities import test_result_entropy
 
 class Permutations:
     """
     Base Data Model class used to associate the Test Result with the logic required to derive its confidence value.
     """
     _window = 0
-    _all_permutations = []
+    _all_permutations: list[list[str] | None] = []
 
     TRANS_TABLE = str.maketrans({"1": "0", "0": "1"})
     """
@@ -29,7 +26,7 @@ class Permutations:
         :type window:
         """
         self._window = window
-        self._all_permutations = [0] * (window+1)
+        self._all_permutations = [None] * (window+1)
 
     def generate_all(self):
         """
@@ -49,39 +46,40 @@ class Permutations:
                                      list(map(lambda x: x.translate(Permutations.TRANS_TABLE), permutations)))
         self.write()
 
-    def find_confidence(self, test_result: TestResult, deviation_bound: float):
+    @staticmethod
+    def calculate_weight(index: int, length: int, spread: float, beta=4.0):
+        midpoint = (length - 1) / 2
+        # Raising to beta instead of 2 widens the shoulders of the weights themselves
+        exponent = np.power(np.abs(index - midpoint), beta) / spread
+        weight = 100 * np.exp(-exponent)
+        return weight
+
+    @staticmethod
+    def calculate_large_scale_confidence(all_weights, target_index):
+        """
+        Highly efficient confidence calculator for thousands of buckets.
+        Simple radial basis profile.
+        """
+        return all_weights[target_index]
+
+    def find_confidence(self, test_result: TestResult, beta=4.0):
         """
         Perform the statistical analysis of a given test result and the sigma deviation value to bound against.
         :param test_result:
         :type test_result:
-        :param deviation_bound:
-        :type deviation_bound:
+        :param beta:
+        :type beta: float
         :return: The final confidence value or '0' if the test result value fell outside the deviation bounding.
         :rtype: float
         """
-        result_template = self._all_permutations[test_result.fail_count()]
-        weights = list(map(lambda x: test_result_entropy(x), result_template))
-        result_dict = dict(zip(result_template, weights))
+        result_template: list[str] = self._all_permutations[test_result.fail_count()] # type: ignore
+        length = len(result_template)
+        spread = np.power((floor(length / 2) / 1.3), beta)
 
-        mu = statistics.fmean(weights)
-        sigma = statistics.pstdev(weights)
+        result_index = result_template.index(str(test_result))
+        all_weights = np.asarray([Permutations.calculate_weight(index, length, spread, beta) for index in range(length)])
 
-        lower_bound = mu - (deviation_bound * sigma)
-        upper_bound = mu + (deviation_bound * sigma)
-
-        ordered_result_dict = dict()
-        for key, value in result_dict.items():
-            ordered_result_dict.setdefault(value, list()).append(key)
-
-        indexes = list(filter(lambda x: lower_bound <= x <= upper_bound, ordered_result_dict.keys()))
-        new_dict = { k: ordered_result_dict[k] for k in indexes if k in ordered_result_dict }
-
-        if test_result.bigram_entropy() in new_dict:
-            bucket_entropy = test_result.bigram_entropy()
-            max_entropy = max(new_dict.keys())
-            return bucket_entropy / max_entropy
-        else:
-            return 0.0
+        return Permutations.calculate_large_scale_confidence(all_weights, result_index)
 
     def _generate_pass_fail_permutations(self, r, b, current_sequence="", all_sequences=None):
         """
