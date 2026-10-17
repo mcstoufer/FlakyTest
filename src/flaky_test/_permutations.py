@@ -1,6 +1,9 @@
 # This is a sample Python script.
 import json
+import sys
+
 import numpy as np
+import os
 import tempfile
 from math import ceil, floor
 
@@ -13,6 +16,7 @@ class Permutations:
     _window = 0
     _all_permutations: list[list[str] | None] = []
 
+    DOTFILE_PATH = os.path.expanduser("~/.flaky_formulary.json")
     TRANS_TABLE = str.maketrans({"1": "0", "0": "1"})
     """
     Helper translation utility to allow a given test result sequence to be inverted. This is useful when
@@ -26,7 +30,7 @@ class Permutations:
         :type window:
         """
         self._window = window
-        self._all_permutations = [None] * (window+1)
+        self.load(window)
 
     def generate_all(self):
         """
@@ -132,6 +136,20 @@ class Permutations:
         """
         self._all_permutations[index] = permutations
 
+    def load(self, window):
+        try:
+            with open(Permutations.DOTFILE_PATH, "r") as tmp_file:
+                self._all_permutations = json.load(tmp_file)
+                length = len(self._all_permutations)
+                if length != window+1:
+                    self._all_permutations = [None] * (window + 1)
+                    print("Updating formulary file. This may take a few moments for large windows.", file=sys.stderr)
+                    self.generate_all()
+        except FileNotFoundError:
+            self._all_permutations = [None] * (window + 1)
+            print("Did not find formulary file. Will create now.", file=sys.stderr)
+            self.generate_all()
+
     def write(self):
         """
         Write out the generated formulary tables to a temp file. This is so future uses don't need to keep
@@ -142,7 +160,7 @@ class Permutations:
         :return: No value is returned from the write.
         :rtype: None
         """
-        with tempfile.NamedTemporaryFile(mode="w+", suffix=".json", delete=False, encoding="utf-8") as tmp_file:
+        with open(Permutations.DOTFILE_PATH, "w", encoding="utf-8") as tmp_file:
             print(f"Formularies file created at: {tmp_file.name}")
             json.dump(self._all_permutations, tmp_file)
 

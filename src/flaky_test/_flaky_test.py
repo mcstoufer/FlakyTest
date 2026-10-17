@@ -90,7 +90,6 @@ class FlakyTest:
 
             fail_pct = test_result.fail_pct()
             if self._pass_pct_lower <= fail_pct <= self._pass_pct_upper:
-                self._permutation_engine.generate_all()
                 calculated_confidence = self._permutation_engine.find_confidence(test_result, beta=self._deviation_bound)
                 calculated_confidences.append((test_result, calculated_confidence))
             else:
