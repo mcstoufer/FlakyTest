@@ -2,6 +2,9 @@
 
 Evaluate flaky test histories using bigram entropy. Requires Python 3.10 or later.
 
+Licensed under the [GNU General Public License v3.0 only](LICENSE)
+(`SPDX-License-Identifier: GPL-3.0-only`).
+
 ## Installation
 
 From a local checkout:

@@ -7,6 +7,10 @@ name = "flaky-test"
 version = "0.1.0"
 description = "Evaluate flaky test histories using standard weighting."
 readme = "README.md"
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+]
 requires-python = ">=3.10"
 dependencies = []
 
