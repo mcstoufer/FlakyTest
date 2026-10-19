@@ -1,4 +1,7 @@
 // swift-tools-version: 6.4
+// SPDX-FileCopyrightText: 2026 Martin Stoufer
+// SPDX-License-Identifier: GPL-3.0-only
+//
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription

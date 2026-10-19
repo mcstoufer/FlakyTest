@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2026 Martin Stoufer
+// SPDX-License-Identifier: GPL-3.0-only
+
 import OSLog
 
 typealias Confidence = (testResult: TestResult, confidence: Float)
