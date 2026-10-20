@@ -1,0 +1,574 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 110;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C76DA78330868D3200EB27DB /* FlakyTest in Frameworks */ = {isa = PBXBuildFile; productRef = C76DA78230868D3200EB27DB /* FlakyTest */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C76DA76730868D1800EB27DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C76DA75130868D1700EB27DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C76DA75830868D1700EB27DB;
+			remoteInfo = FlakyTestUI;
+		};
+		C76DA77130868D1800EB27DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C76DA75130868D1700EB27DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C76DA75830868D1700EB27DB;
+			remoteInfo = FlakyTestUI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C76DA75930868D1700EB27DB /* FlakyTestUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlakyTestUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C76DA76630868D1800EB27DB /* FlakyTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlakyTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C76DA77030868D1800EB27DB /* FlakyTestUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlakyTestUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		C76DA75B30868D1700EB27DB /* FlakyTestUI */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = FlakyTestUI;
+			sourceTree = "<group>";
+		};
+		C76DA76930868D1800EB27DB /* FlakyTestUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = FlakyTestUITests;
+			sourceTree = "<group>";
+		};
+		C76DA77330868D1800EB27DB /* FlakyTestUIUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = FlakyTestUIUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C76DA75630868D1700EB27DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+				C76DA78330868D3200EB27DB /* FlakyTest in Frameworks */,
+			);
+		};
+		C76DA76330868D1800EB27DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+		C76DA76D30868D1800EB27DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C76DA75030868D1700EB27DB = {
+			isa = PBXGroup;
+			children = (
+				C76DA75B30868D1700EB27DB /* FlakyTestUI */,
+				C76DA76930868D1800EB27DB /* FlakyTestUITests */,
+				C76DA77330868D1800EB27DB /* FlakyTestUIUITests */,
+				C76DA75A30868D1700EB27DB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C76DA75A30868D1700EB27DB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C76DA75930868D1700EB27DB /* FlakyTestUI.app */,
+				C76DA76630868D1800EB27DB /* FlakyTestUITests.xctest */,
+				C76DA77030868D1800EB27DB /* FlakyTestUIUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C76DA75830868D1700EB27DB /* FlakyTestUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C76DA77830868D1800EB27DB /* Build configuration list for PBXNativeTarget "FlakyTestUI" */;
+			buildPhases = (
+				C76DA75530868D1700EB27DB /* Sources */,
+				C76DA75630868D1700EB27DB /* Frameworks */,
+				C76DA75730868D1700EB27DB /* Resources */,
+			);
+			buildRules = (
+			);
+			fileSystemSynchronizedGroups = (
+				C76DA75B30868D1700EB27DB /* FlakyTestUI */,
+			);
+			name = FlakyTestUI;
+			packageProductDependencies = (
+				C76DA78230868D3200EB27DB /* FlakyTest */,
+			);
+			productName = FlakyTestUI;
+			productReference = C76DA75930868D1700EB27DB /* FlakyTestUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C76DA76530868D1800EB27DB /* FlakyTestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C76DA77B30868D1800EB27DB /* Build configuration list for PBXNativeTarget "FlakyTestUITests" */;
+			buildPhases = (
+				C76DA76230868D1800EB27DB /* Sources */,
+				C76DA76330868D1800EB27DB /* Frameworks */,
+				C76DA76430868D1800EB27DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C76DA76830868D1800EB27DB /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C76DA76930868D1800EB27DB /* FlakyTestUITests */,
+			);
+			name = FlakyTestUITests;
+			productName = FlakyTestUITests;
+			productReference = C76DA76630868D1800EB27DB /* FlakyTestUITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C76DA76F30868D1800EB27DB /* FlakyTestUIUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C76DA77E30868D1800EB27DB /* Build configuration list for PBXNativeTarget "FlakyTestUIUITests" */;
+			buildPhases = (
+				C76DA76C30868D1800EB27DB /* Sources */,
+				C76DA76D30868D1800EB27DB /* Frameworks */,
+				C76DA76E30868D1800EB27DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C76DA77230868D1800EB27DB /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C76DA77330868D1800EB27DB /* FlakyTestUIUITests */,
+			);
+			name = FlakyTestUIUITests;
+			productName = FlakyTestUIUITests;
+			productReference = C76DA77030868D1800EB27DB /* FlakyTestUIUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C76DA75130868D1700EB27DB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2700;
+				LastUpgradeCheck = 2700;
+				TargetAttributes = {
+					C76DA75830868D1700EB27DB = {
+						CreatedOnToolsVersion = 27.0;
+					};
+					C76DA76530868D1800EB27DB = {
+						CreatedOnToolsVersion = 27.0;
+						TestTargetID = C76DA75830868D1700EB27DB;
+					};
+					C76DA76F30868D1800EB27DB = {
+						CreatedOnToolsVersion = 27.0;
+						TestTargetID = C76DA75830868D1700EB27DB;
+					};
+				};
+			};
+			buildConfigurationList = C76DA75430868D1700EB27DB /* Build configuration list for PBXProject "FlakyTestUI" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C76DA75030868D1700EB27DB;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				C76DA78130868D3200EB27DB /* XCLocalSwiftPackageReference "../../Swift" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = C76DA75A30868D1700EB27DB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C76DA75830868D1700EB27DB /* FlakyTestUI */,
+				C76DA76530868D1800EB27DB /* FlakyTestUITests */,
+				C76DA76F30868D1800EB27DB /* FlakyTestUIUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C76DA75730868D1700EB27DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+		C76DA76430868D1800EB27DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+		C76DA76E30868D1800EB27DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C76DA75530868D1700EB27DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+		C76DA76230868D1800EB27DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+		C76DA76C30868D1800EB27DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C76DA76830868D1800EB27DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C76DA75830868D1700EB27DB /* FlakyTestUI */;
+			targetProxy = C76DA76730868D1800EB27DB /* PBXContainerItemProxy */;
+		};
+		C76DA77230868D1800EB27DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C76DA75830868D1700EB27DB /* FlakyTestUI */;
+			targetProxy = C76DA77130868D1800EB27DB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C76DA77630868D1800EB27DB /* Debug configuration for PBXProject "FlakyTestUI" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 9643CQ524U;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C76DA77730868D1800EB27DB /* Release configuration for PBXProject "FlakyTestUI" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 9643CQ524U;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		C76DA77930868D1800EB27DB /* Debug configuration for PBXNativeTarget "FlakyTestUI" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9643CQ524U;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Martin Stoufer. Licensed under the GNU General Public License v3.0.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.martinstoufer.auggie.FlakyTestUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C76DA77A30868D1800EB27DB /* Release configuration for PBXNativeTarget "FlakyTestUI" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9643CQ524U;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Martin Stoufer. Licensed under the GNU General Public License v3.0.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.martinstoufer.auggie.FlakyTestUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		C76DA77C30868D1800EB27DB /* Debug configuration for PBXNativeTarget "FlakyTestUITests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9643CQ524U;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.martinstoufer.auggie.FlakyTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlakyTestUI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FlakyTestUI";
+			};
+			name = Debug;
+		};
+		C76DA77D30868D1800EB27DB /* Release configuration for PBXNativeTarget "FlakyTestUITests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9643CQ524U;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.martinstoufer.auggie.FlakyTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlakyTestUI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FlakyTestUI";
+			};
+			name = Release;
+		};
+		C76DA77F30868D1800EB27DB /* Debug configuration for PBXNativeTarget "FlakyTestUIUITests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9643CQ524U;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.martinstoufer.auggie.FlakyTestUIUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = FlakyTestUI;
+			};
+			name = Debug;
+		};
+		C76DA78030868D1800EB27DB /* Release configuration for PBXNativeTarget "FlakyTestUIUITests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9643CQ524U;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.martinstoufer.auggie.FlakyTestUIUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = FlakyTestUI;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C76DA75430868D1700EB27DB /* Build configuration list for PBXProject "FlakyTestUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C76DA77630868D1800EB27DB /* Debug configuration for PBXProject "FlakyTestUI" */,
+				C76DA77730868D1800EB27DB /* Release configuration for PBXProject "FlakyTestUI" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		C76DA77830868D1800EB27DB /* Build configuration list for PBXNativeTarget "FlakyTestUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C76DA77930868D1800EB27DB /* Debug configuration for PBXNativeTarget "FlakyTestUI" */,
+				C76DA77A30868D1800EB27DB /* Release configuration for PBXNativeTarget "FlakyTestUI" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		C76DA77B30868D1800EB27DB /* Build configuration list for PBXNativeTarget "FlakyTestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C76DA77C30868D1800EB27DB /* Debug configuration for PBXNativeTarget "FlakyTestUITests" */,
+				C76DA77D30868D1800EB27DB /* Release configuration for PBXNativeTarget "FlakyTestUITests" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		C76DA77E30868D1800EB27DB /* Build configuration list for PBXNativeTarget "FlakyTestUIUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C76DA77F30868D1800EB27DB /* Debug configuration for PBXNativeTarget "FlakyTestUIUITests" */,
+				C76DA78030868D1800EB27DB /* Release configuration for PBXNativeTarget "FlakyTestUIUITests" */,
+			);
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		C76DA78130868D3200EB27DB /* XCLocalSwiftPackageReference "../../Swift" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../Swift;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C76DA78230868D3200EB27DB /* FlakyTest */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FlakyTest;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = C76DA75130868D1700EB27DB /* Project object */;
+	validationLevel = 1;
+}

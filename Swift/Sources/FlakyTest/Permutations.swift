@@ -10,29 +10,49 @@
 import Foundation
 import OSLog
 
-class Permutations {
+#if canImport(Darwin)
+import Darwin
+#elseif canImport(Glibc)
+import Glibc
+#endif
+
+public class Permutations {
     static let DOTFILE_PATH = ".flaky_formulary.json"
+
+    private static var userHomeDirectory: URL {
+        guard let passwordEntry = getpwuid(getuid()),
+              let homePath = passwordEntry.pointee.pw_dir else {
+            return FileManager.default.homeDirectoryForCurrentUser
+        }
+
+        return URL(
+            fileURLWithFileSystemRepresentation: homePath,
+            isDirectory: true,
+            relativeTo: nil
+        )
+    }
     
     let window: Int
     var allPermutations: [[String]]
     
-    init(window: Int = 0) {
+    public init(window: Int = 0) {
         self.window = window
         self.allPermutations = []
         load(size: window)
     }
     
-    func findConfidence(testResult: TestResult, beta: Float=4.0) -> Float {
+    public func findConfidence(testResult: TestResult, beta: Float=4.0) -> Float {
         let resultTemplate = allPermutations[testResult.failCount]
         let length = resultTemplate.count
         let spread = pow(Float((floor(Float(length/2)))) / 1.3, beta)
-        let resultIndex = resultTemplate.firstIndex(of: testResult.string)
         
-        let allWeights: [Float] = (0...length).map { index in
-            return calculateWeight(index: index, length: length, spread: spread)
+        guard let resultIndex = resultTemplate.firstIndex(of: testResult.string) else {
+            return 0.0
         }
         
-        return allWeights[resultIndex!]
+        return (0...length).map { index in
+            return calculateWeight(index: index, length: length, spread: spread)
+        }[resultIndex]        
     }
     
     private func generateAll() {
@@ -67,7 +87,7 @@ class Permutations {
         
         func generate(pass: Int, fail: Int, current: String) {
             if pass == 0 && fail == 0 {
-                allSequences.append(currentSequence)
+                allSequences.append(current)
                 return
             }
             if pass > 0 { generate(pass: pass-1, fail: fail, current: current+"1") }
@@ -79,14 +99,19 @@ class Permutations {
     }
     
     private func load(size: Int) {
-        let homeDirectory = FileManager.default.homeDirectoryForCurrentUser
-        let fileURL = homeDirectory.appendingPathComponent(Permutations.DOTFILE_PATH)
+        let fileURL = Permutations.userHomeDirectory
+            .appendingPathComponent(Permutations.DOTFILE_PATH)
         
         if FileManager.default.fileExists(atPath: fileURL.path) {
             do {
                 let jsonData = try Data(contentsOf: fileURL)
-                allPermutations = try JSONDecoder().decode([[String]].self, from: jsonData)
-                if allPermutations.count != self.window+1 {
+                let decodedPermutations = try JSONDecoder().decode([[String]].self, from: jsonData)
+                let hasValidShape = decodedPermutations.count == window + 1
+                    && decodedPermutations.flatMap { $0 }.allSatisfy { $0.count == window }
+
+                if hasValidShape {
+                    allPermutations = decodedPermutations
+                } else {
                     allPermutations = Array(repeating: [], count: window+1)
                     Logger.engine.info("Updating formulary file. This may take a few moments for large windows.")
                     self.generateAll()
@@ -103,8 +128,8 @@ class Permutations {
     }
     
     private func write() {
-        let homeDirectory = FileManager.default.homeDirectoryForCurrentUser
-        let fileURL = homeDirectory.appendingPathComponent(Permutations.DOTFILE_PATH)
+        let fileURL = Permutations.userHomeDirectory
+            .appendingPathComponent(Permutations.DOTFILE_PATH)
         do {
             let jsonData = try JSONEncoder().encode(allPermutations)
             try jsonData.write(to: fileURL)

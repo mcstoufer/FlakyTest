@@ -3,17 +3,17 @@
 
 import OSLog
 
-typealias Confidence = (testResult: TestResult, confidence: Float)
+public typealias Confidence = (testResult: TestResult, confidence: Float)
 
 public class FlakyTest {
-    static let MIN_TEST_COUNT: Int = 10
+    public static let MIN_TEST_COUNT: Int = 10
     
     let deviationBound: Float
     let testCount: Int
     let permutationEngine: Permutations
     let passRange: ClosedRange<Float>
     
-    init(
+    public init(
         passPctUpper: Float = 0.85,
         passPctLower: Float = 0.10,
         deviationBound: Float = 4.0,
@@ -26,7 +26,7 @@ public class FlakyTest {
         self.passRange = passPctLower...passPctUpper
     }
     
-    func evaluate(testResults: [TestResult]) -> [Confidence] {
+    public func evaluate(testResults: [TestResult]) -> [Confidence] {
         var calculatedConfidences: [Confidence] = []
         
         testResults.forEach { testResult in

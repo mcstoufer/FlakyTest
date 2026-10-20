@@ -11,7 +11,11 @@
 public class TestResult {
     var testResults: [String]
     
-    init(testResults: [String]) {
+    public convenience init(testResult: String) {
+        self.init(testResults: testResult.map { String($0) })
+    }
+    
+    public init(testResults: [String]) {
         self.testResults = testResults
     }
     
