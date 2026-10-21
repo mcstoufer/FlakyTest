@@ -16,8 +16,8 @@ FlakyTestActor {
     
     init(passPct: Float, failPct: Float, deviationBound: Float, testCount: Int) {
         self.flakyTest = FlakyTest(
-            passPctUpper: failPct,
-            passPctLower: passPct,
+            failPctUpper: failPct,
+            failPctLower: passPct,
             deviationBound: deviationBound,
             testCount: testCount
         )

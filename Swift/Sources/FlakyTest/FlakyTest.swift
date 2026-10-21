@@ -17,8 +17,8 @@ public class FlakyTest {
     let passRange: ClosedRange<Float>
     
     public init(
-        passPctUpper: Float = DEFAULT_FAIL_PCT,
-        passPctLower: Float = DEFAULT_PASS_PCT,
+        failPctUpper: Float = DEFAULT_FAIL_PCT,
+        failPctLower: Float = DEFAULT_PASS_PCT,
         deviationBound: Float = DEFAULT_DEV_BOUND,
         testCount: Int = 14
     ) {
@@ -26,7 +26,7 @@ public class FlakyTest {
         self.deviationBound = deviationBound
         self.testCount = testCount
         self.permutationEngine = Permutations(window: self.testCount)
-        self.passRange = passPctLower...passPctUpper
+        self.passRange = failPctLower...failPctUpper
     }
     
     public func evaluate(testResults: [TestResult]) -> [Confidence] {
