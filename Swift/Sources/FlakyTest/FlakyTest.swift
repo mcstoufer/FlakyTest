@@ -7,6 +7,9 @@ public typealias Confidence = (testResult: TestResult, confidence: Float)
 
 public class FlakyTest {
     public static let MIN_TEST_COUNT: Int = 10
+    public static let DEFAULT_FAIL_PCT:Float = 0.85
+    public static let DEFAULT_PASS_PCT:Float = 0.10
+    public static let DEFAULT_DEV_BOUND: Float = 4.0
     
     let deviationBound: Float
     let testCount: Int
@@ -14,9 +17,9 @@ public class FlakyTest {
     let passRange: ClosedRange<Float>
     
     public init(
-        passPctUpper: Float = 0.85,
-        passPctLower: Float = 0.10,
-        deviationBound: Float = 4.0,
+        passPctUpper: Float = DEFAULT_FAIL_PCT,
+        passPctLower: Float = DEFAULT_PASS_PCT,
+        deviationBound: Float = DEFAULT_DEV_BOUND,
         testCount: Int = 14
     ) {
         assert(testCount > FlakyTest.MIN_TEST_COUNT, "Test count not long enough. Must be at least \(FlakyTest.MIN_TEST_COUNT)")

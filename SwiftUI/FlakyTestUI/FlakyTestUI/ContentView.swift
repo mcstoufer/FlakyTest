@@ -16,6 +16,20 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
+            HStack {
+                VStack {
+                    Text("Pass / Fail percent clipping range")
+                    DualRangeSlider(passPct: $viewModel.passPct,
+                                    failPct: $viewModel.failPct,
+                                    selectedColor: .green)
+                }
+                VStack {
+                    Text("σ: \(viewModel.deviation, specifier: "%.2f")")
+                    VerticalSlider(value: $viewModel.deviation)
+                }
+            }
+            .frame(height: 100)
+            
             HStack() {
                 if !viewModel.errorString.isEmpty {
                     Text(viewModel.errorString)

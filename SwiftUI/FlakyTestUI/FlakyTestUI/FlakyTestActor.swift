@@ -2,7 +2,7 @@
 //  SPDX-FileCopyrightText: 2026 Martin Stoufer
 //  SPDX-License-Identifier: GPL-3.0-only
 //
-//  PermutationsActor.swift
+//  FlakyTestActor.swift
 //  FlakyTestUI
 //
 //  Created by Martin Stoufer on 10/20/26.
@@ -14,8 +14,13 @@ actor
 FlakyTestActor {
     private let flakyTest: FlakyTest
     
-    init(testCount: Int) {
-        self.flakyTest = FlakyTest(testCount: testCount)
+    init(passPct: Float, failPct: Float, deviationBound: Float, testCount: Int) {
+        self.flakyTest = FlakyTest(
+            passPctUpper: failPct,
+            passPctLower: passPct,
+            deviationBound: deviationBound,
+            testCount: testCount
+        )
     }
     
     func findConfidence(testResult: TestResult) -> Float {

@@ -30,6 +30,9 @@ class FlakyTestUIViewModel {
     
     var errorString: String = ""
     var confidence: Float = 0.0
+    var passPct: Int = Int(FlakyTest.DEFAULT_PASS_PCT * 100)
+    var failPct: Int = Int(FlakyTest.DEFAULT_FAIL_PCT * 100)
+    var deviation: Float = FlakyTest.DEFAULT_DEV_BOUND
     
     // Backing array holding the source of truth for the states
     var _items: [ToggleItem] = Array(repeating: ToggleItem(isOn: false), count: 14)
@@ -64,7 +67,12 @@ class FlakyTestUIViewModel {
     }
     
     func findConfidence() async {
-        let engine = FlakyTestActor(testCount: items.count)
+        let engine = FlakyTestActor(
+            passPct: Float(passPct) / 100.0,
+            failPct: Float(failPct) / 100.0,
+            deviationBound: deviation,
+            testCount: items.count
+        )
         let result = await engine.findConfidence(testResult: TestResult(testResult: items.reduceToPattern()))
         confidence = result
     }
